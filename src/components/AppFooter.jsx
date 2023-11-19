@@ -1,10 +1,10 @@
 const AppFooter = () => {
   const SOCIALS = [
-    { name: "Behance", link: "" },
-    { name: "LinkedIn", link: "" },
-    { name: "Twitter", link: "" },
-    { name: "Instagram", link: "" },
-    { name: "Email", link: "" },
+    { name: "Behance", link: "https://www.behance.net/dunsinbankole" },
+    { name: "LinkedIn", link: "https://www.linkedin.com/in/bankolejesudunsin/" },
+    { name: "Twitter", link: "https://x.com/bvnkole" },
+    { name: "Instagram", link: "https://instagram.com/bvnkole" },
+    { name: "Dribble", link: "https://dribbble.com/dunsinbankole" },
   ];
 
   return (
