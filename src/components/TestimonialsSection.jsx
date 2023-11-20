@@ -41,12 +41,12 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section id="testimonials" className="my-16 max-w-screen-xl mx-auto px-16">
+    <section id="testimonials" className="my-16 max-w-screen-xl mx-auto px-8 md:px-16">
       <h3 className="text-5xl font-bold mb-6 text-center">Testimonials</h3>
       <Slider ref={sliderRef} {...settings}>
         {SLIDES.map((item, index) => (
           <div key={index} className={`border-2 border-black p-8 rounded-[32px]`}>
-            <p className="text-3xl mb-3">&ldquo;{item.text}&rdquo;</p>
+            <p className="text-xl md:text-3xl mb-3">&ldquo;{item.text}&rdquo;</p>
             <h6 className="text-lg font-bold">{item.name}</h6>
             <p>{item.work}</p>
           </div>

@@ -16,14 +16,16 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-10">
-      <div className="animate-marquee whitespace-nowrap">
-        <h2 className="text-6xl font-black text-black leading-[0.9]" style={{ textShadow: "0 0 3px white" }}>
-          PROJECTS - PROJECTS - PROJECTS - PROJECTS - PROJECTS
-        </h2>
+      <div className="overflow-x-hidden text-white overflow-y-hidden">
+        <div className="animate-marquee whitespace-nowrap">
+          <h2 className="text-4xl md:text-6xl font-black text-black">
+            PROJECTS - PROJECTS - PROJECTS - PROJECTS - PROJECTS
+          </h2>
+        </div>
       </div>
       <div className="border-b-2 border-black mt-5 mb-2" />
       <div className="flex justify-end">
-        <div className="w-1/3 grid grid-cols-3 py-9 text-xs">
+        <div className="w-4/5 md:w-1/3 grid grid-cols-3 py-9 text-xs">
           <div>
             <h4 className="text-sm mb-2">TOOLS</h4>
             {TOOLS.map((tool) => (
@@ -48,10 +50,10 @@ const ProjectsSection = () => {
         {PROJECTS.map((project) => (
           <li
             key={project.name}
-            className="border-bottom border-b border-black px-24 py-6 flex items-center justify-between text-3xl font-light cursor-pointer"
+            className="border-bottom border-b border-black px-8 md:px-24 py-6 flex items-center justify-between gap-8 text-xl md:text-3xl font-light cursor-pointer"
           >
             {project.name}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-10 w-10">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-6 md:h-10 md:w-10 flex-shrink-0">
               <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
             </svg>
           </li>
