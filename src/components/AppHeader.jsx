@@ -16,7 +16,7 @@ const AppHeader = () => {
           </li>
         ))}
       </ul>
-      <button className="ml-auto">
+      <button className="ml-auto md:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-8 w-8">
           <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
         </svg>
