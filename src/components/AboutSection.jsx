@@ -9,7 +9,7 @@ const AboutSection = () => {
         </p>
         <button
           type="button"
-          className="bg-[#787DFF] hover:bg-opacity-75 text-white text-base md:text-xl font-bold py-4 px-8 rounded-2xl transition-all focus:ring-4 focus:ring-indigo-200"
+          className="bg-accent hover:bg-opacity-75 text-white text-base md:text-xl font-bold py-4 px-8 rounded-2xl transition-all focus:ring-4 focus:ring-indigo-200"
         >
           Hit Me
         </button>

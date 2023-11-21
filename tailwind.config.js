@@ -1,4 +1,4 @@
-import defaultTheme from 'tailwindcss/defaultTheme'
+import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -6,7 +6,10 @@ export default {
     extend: {
       fontFamily: {
         sans: ['"SF Pro Display"', ...defaultTheme.fontFamily.sans],
-        serif: ['Ager', ...defaultTheme.fontFamily.sans],
+        serif: ["Ager", ...defaultTheme.fontFamily.sans],
+      },
+      colors: {
+        accent: "#787DFF",
       },
       animation: {
         marquee: "marquee 25s linear infinite",
