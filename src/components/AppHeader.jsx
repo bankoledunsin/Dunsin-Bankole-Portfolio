@@ -10,7 +10,7 @@ const AppHeader = () => {
 
   return (
     <header className="bg-white rounded-lg h-16 shadow-lg flex items-center fixed gap-14 top-3 left-4 right-4 text-sm px-4 md:px-9 z-10">
-      <h1 className="font-bold">DUNSIN BANKOLE</h1>
+      <h1 className="font-bold"><a href="/">DUNSIN BANKOLE</a></h1>
       <p className="hidden md:block">PRODUCT DESIGNER CREATING EXPERIENCES THAT ACTUALLY WORK</p>
       <ul className="hidden ml-auto uppercase md:flex gap-6">
         {LINKS.map((item) => (

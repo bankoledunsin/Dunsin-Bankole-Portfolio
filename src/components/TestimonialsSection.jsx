@@ -16,7 +16,7 @@ const TestimonialsSection = () => {
     {
       text: "He is a designer who is obsessed with details and the balance of form and function. His exceptional  creativity, and deep understanding of the principles of design has transformed several projects we worked on over the years.",
       name: "Dolapo Amusat",
-      work: "Product Manager, Google",
+      work: "Founder, WeTalkSound",
     },
     {
       text: "Dunsin is an exceptional designer/artist, he gives uncut attention to details on all projects. He is one of the very few designers I know for being passionately consistent and always improving their designs. He has a good working personality and he is definitely the man you need for your project(s).",

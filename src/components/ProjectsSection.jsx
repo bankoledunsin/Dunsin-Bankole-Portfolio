@@ -1,12 +1,12 @@
 const ProjectsSection = () => {
   const PROJECTS = [
+    { name: "Siti Pass - UX & UI Design", link: "" },
     { name: "Dada Fitness - Branding, UX & UI Design", link: "" },
     { name: "Owo - Branding, UX & UI Design", link: "" },
     { name: "Afro Garage - Branding, Website", link: "" },
     { name: "Metavrsd - Website", link: "" },
     { name: "printx - Website", link: "" },
     { name: "Carte Cloud Delivery App - UX & UI Design", link: "" },
-    { name: "Siti Pass - UX & UI Design", link: "" },
     { name: "Wetalksound - Website Design", link: "" },
   ];
 
@@ -53,7 +53,11 @@ const ProjectsSection = () => {
             className="border-bottom border-b border-black px-8 md:px-24 py-6 flex items-center justify-between gap-8 text-xl md:text-3xl font-light cursor-pointer"
           >
             {project.name}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-6 md:h-10 md:w-10 flex-shrink-0">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              className="h-6 w-6 md:h-10 md:w-10 flex-shrink-0"
+            >
               <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
             </svg>
           </li>
