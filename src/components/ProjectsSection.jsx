@@ -1,13 +1,47 @@
+import { Tooltip } from "react-tooltip";
+
 const ProjectsSection = () => {
   const PROJECTS = [
-    { name: "Siti Pass - UX & UI Design", link: "" },
-    { name: "Dada Fitness - Branding, UX & UI Design", link: "" },
-    { name: "Owo - Branding, UX & UI Design", link: "" },
-    { name: "Afro Garage - Branding, Website", link: "" },
-    { name: "Metavrsd - Website", link: "" },
-    { name: "printx - Website", link: "" },
-    { name: "Carte Cloud Delivery App - UX & UI Design", link: "" },
-    { name: "Wetalksound - Website Design", link: "" },
+    {
+      name: "Siti Pass - UX & UI Design",
+      link: "https://www.behance.net/gallery/69193679/EX-MACHINA-Photography-Art-Direction",
+      img: "",
+    },
+    {
+      name: "Dada Fitness - Branding, UX & UI Design",
+      link: "https://www.behance.net/gallery/69193679/EX-MACHINA-Photography-Art-Direction",
+      img: "",
+    },
+    {
+      name: "Owo - Branding, UX & UI Design",
+      link: "https://www.behance.net/gallery/69193679/EX-MACHINA-Photography-Art-Direction",
+      img: "",
+    },
+    {
+      name: "Afro Garage - Branding, Website",
+      link: "https://www.behance.net/gallery/69193679/EX-MACHINA-Photography-Art-Direction",
+      img: "",
+    },
+    {
+      name: "Metavrsd - Website",
+      link: "https://www.behance.net/gallery/69193679/EX-MACHINA-Photography-Art-Direction",
+      img: "",
+    },
+    {
+      name: "printx - Website",
+      link: "https://www.behance.net/gallery/69193679/EX-MACHINA-Photography-Art-Direction",
+      img: "",
+    },
+    {
+      name: "Carte Cloud Delivery App - UX & UI Design",
+      link: "https://www.behance.net/gallery/69193679/EX-MACHINA-Photography-Art-Direction",
+      img: "",
+    },
+    {
+      name: "Wetalksound - Website Design",
+      link: "https://www.behance.net/gallery/69193679/EX-MACHINA-Photography-Art-Direction",
+      img: "",
+    },
   ];
 
   const TOOLS = ["Figma", "Webflow", "After Effects", "Adobe Photoshop", "Adobe Illustrator"];
@@ -46,23 +80,39 @@ const ProjectsSection = () => {
           </div>
         </div>
       </div>
-      <ul>
-        {PROJECTS.map((project) => (
-          <li
-            key={project.name}
-            className="border-bottom border-b border-black px-8 md:px-24 py-6 flex items-center justify-between gap-8 text-xl md:text-3xl font-light cursor-pointer"
-          >
-            {project.name}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              className="h-6 w-6 md:h-10 md:w-10 flex-shrink-0"
+      <div>
+        {PROJECTS.map((project, idx) => (
+          <>
+            <a
+              key={project.name}
+              className={`w-full border-bottom group border-b border-black px-8 md:px-24 py-6 flex items-center justify-between gap-8 hover:text-accent text-xl md:text-3xl font-light cursor-pointer transition-all ease-in-out duration-300 tooltip-${idx}`}
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
             >
-              <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-            </svg>
-          </li>
+              {project.name}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="h-6 w-6 md:h-10 md:w-10 flex-shrink-0 group-hover:fill-accent transition-all ease-in-out duration-300"
+              >
+                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+              </svg>
+            </a>
+            <Tooltip
+              anchorSelect={`.tooltip-${idx}`}
+              place="top"
+              style={{ backgroundColor: "#787DFF" }}
+              opacity={1}
+            >
+              <div className="text-center">
+                <img src={project.img} alt={project.name} className="min-h-[160px] min-w-[160px] bg-gray-300 mx-auto" />
+                <h3 className="mt-2 font-medium">{project.name}</h3>
+              </div>
+            </Tooltip>
+          </>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };

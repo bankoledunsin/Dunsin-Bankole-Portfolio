@@ -18,12 +18,12 @@
 }
 
 @font-face {
-    font-family: "SF Pro Display";
-    src: url("./assets/fonts/SF-Pro-Display-Light.ttf");
-    font-style: normal;
-    font-weight: 300;
-    display: swap;
-  }
+  font-family: "SF Pro Display";
+  src: url("./assets/fonts/SF-Pro-Display-Light.ttf");
+  font-style: normal;
+  font-weight: 300;
+  display: swap;
+}
 
 @font-face {
   font-family: "SF Pro Display";
@@ -34,5 +34,5 @@
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }

@@ -1,5 +1,4 @@
-import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const CategoriesSection = () => {
   const CATEGORIES = [
@@ -24,15 +23,36 @@ const CategoriesSection = () => {
 
   const isString = (item) => typeof item === "string";
 
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <section className="p-3 md:p-5 grid grid-cols-2 gap-3 md:gap-5 text-white">
+    <section className="p-3 md:p-5 grid grid-cols-2 gap-3 md:gap-5 text-white relative">
       {CATEGORIES.map((category, y) =>
         isString(category.link) ? (
           <a
             key={category.name}
             className={`px-8 py-3 ${
               !y ? "col-span-2" : ""
-            } rounded-lg h-60 md:h-[316px] flex items-end text-3xl md:text-5xl cursor-pointer`}
+            } rounded-lg h-60 md:h-[316px] flex items-end text-3xl md:text-5xl cursor-pointer relative`}
             style={{ background: category.color }}
             href={category.link}
             target="_blank"
@@ -41,45 +61,34 @@ const CategoriesSection = () => {
             {category.name}
           </a>
         ) : (
-          <Menu key={category.name} as="div" className="relative inline-block text-left">
-            <Menu.Button
-              as="div"
+          <div key={category.name} ref={dropdownRef} className="relative">
+            <div
+              style={{ background: category.color }}
+              onClick={toggleMenu}
               className={`px-8 py-3 ${
                 !y ? "col-span-2" : ""
               } rounded-lg h-60 md:h-[316px] flex items-end text-3xl md:text-5xl cursor-pointer`}
-              style={{ background: category.color }}
             >
               {category.name}
-            </Menu.Button>
-            <Transition
-              as={Fragment}
-              enter="transition ease-out duration-100"
-              enterFrom="transform opacity-0 scale-95"
-              enterTo="transform opacity-100 scale-100"
-              leave="transition ease-in duration-75"
-              leaveFrom="transform opacity-100 scale-100"
-              leaveTo="transform opacity-0 scale-95"
-            >
-              <Menu.Items className="absolute right-0 mt-2 w-56 z-[5] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-xl ring-1 ring-black/5 focus:outline-none">
+            </div>
+            {isOpen && (
+              <div className="absolute right-0 top-[75%] z-[5] origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-xl ring-1 ring-black/5 focus:outline-none">
                 {category.link.map((item) => (
-                  <Menu.Item key={item.text} as="div" className="px-1 py-1">
-                    {({ active }) => (
-                      <a
-                        className={`${
-                          active ? "bg-accent text-white" : "text-gray-900 font-medium"
-                        } group flex w-full items-center rounded-md px-4 py-2 text-sm`}
-                        href={item.href}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {item.text}
-                      </a>
-                    )}
-                  </Menu.Item>
+                  <div key={item} className="px-1 py-1">
+                    <a
+                      key={item.text}
+                      className="hover:bg-accent hover:text-white text-gray-900 font-medium group flex w-full items-center rounded-md px-4 py-4 text-xl sm:text-2xl sm:px-8 md:text-3xl"
+                      href={item.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {item.text}
+                    </a>
+                  </div>
                 ))}
-              </Menu.Items>
-            </Transition>
-          </Menu>
+              </div>
+            )}
+          </div>
         )
       )}
     </section>
