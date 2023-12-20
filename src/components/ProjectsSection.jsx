@@ -1,4 +1,4 @@
-import { Tooltip } from "react-tooltip";
+// import { Tooltip } from "react-tooltip";
 
 const ProjectsSection = () => {
   const PROJECTS = [
@@ -99,7 +99,7 @@ const ProjectsSection = () => {
                 <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
               </svg>
             </a>
-            <Tooltip
+            {/* <Tooltip
               anchorSelect={`.tooltip-${idx}`}
               place="top"
               style={{ backgroundColor: "#787DFF" }}
@@ -109,7 +109,7 @@ const ProjectsSection = () => {
                 <img src={project.img} alt={project.name} className="min-h-[160px] min-w-[160px] bg-gray-300 mx-auto" />
                 <h3 className="mt-2 font-medium">{project.name}</h3>
               </div>
-            </Tooltip>
+            </Tooltip> */}
           </>
         ))}
       </div>
