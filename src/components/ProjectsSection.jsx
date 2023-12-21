@@ -1,5 +1,7 @@
 // import { Tooltip } from "react-tooltip";
 
+import Marquee from "./Marquee";
+
 const ProjectsSection = () => {
   const PROJECTS = [
     {
@@ -50,13 +52,8 @@ const ProjectsSection = () => {
 
   return (
     <section id="projects" className="py-10">
-      <div className="overflow-x-hidden text-white overflow-y-hidden">
-        <div className="animate-marquee whitespace-nowrap">
-          <h2 className="text-4xl md:text-6xl font-black text-black">
-            PROJECTS - PROJECTS - PROJECTS - PROJECTS - PROJECTS
-          </h2>
-        </div>
-      </div>
+      <Marquee text="PROJECTS" textClassName="mx-8 text-4xl md:text-6xl font-black text-black" />
+
       <div className="border-b-2 border-black mt-5 mb-2" />
       <div className="flex justify-end">
         <div className="w-4/5 md:w-1/3 grid grid-cols-3 py-9 text-xs">
