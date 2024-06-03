@@ -20,11 +20,15 @@ const AppHeader = () => {
     }
   };
 
+  const [activeLink, setActiveLink] = useState("");
+
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("hashchange", (e) => setActiveLink("#" + e.newURL.split("#")[1]));
 
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("hashchange", (e) => setActiveLink("#" + e.newURL.split("#")[1]));
     };
   }, []);
 
@@ -37,7 +41,12 @@ const AppHeader = () => {
       <ul className="hidden ml-auto uppercase md:flex gap-6">
         {LINKS.map((item) => (
           <li key={item.href}>
-            <a href={item.href}>{item.text}</a>
+            <a
+              href={item.href}
+              className={`hover:text-accent font-medium ${activeLink === item.href ? "text-accent" : ""}`}
+            >
+              {item.text}
+            </a>
           </li>
         ))}
       </ul>
@@ -50,7 +59,13 @@ const AppHeader = () => {
         {isOpen && (
           <div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-lg ring-1 ring-black/5">
             {LINKS.map((item) => (
-              <a key={item.text} href={item.href} className="block px-4 py-2 text-gray-900 hover:bg-accent hover:text-white">
+              <a
+                key={item.text}
+                href={item.href}
+                className={`block px-4 py-2 text-gray-900 hover:bg-accent hover:text-white ${
+                  activeLink === item.href ? "bg-accent text-white" : ""
+                }`}
+              >
                 {item.text}
               </a>
             ))}

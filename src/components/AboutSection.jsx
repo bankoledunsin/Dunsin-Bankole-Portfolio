@@ -1,6 +1,9 @@
 const AboutSection = () => {
   return (
-    <section id="about" className="min-h-[500px] md:min-h-[600px] py-6 bg-black text-white flex items-center justify-around">
+    <section
+      id="about"
+      className="min-h-[500px] md:min-h-[600px] py-6 bg-black text-white flex items-center justify-around"
+    >
       <div className="w-4/5 md:w-2/5">
         <h3 className="text-5xl md:text-8xl font-bold mb-2">About</h3>
         <p className="text-xl md:text-3xl mb-3">

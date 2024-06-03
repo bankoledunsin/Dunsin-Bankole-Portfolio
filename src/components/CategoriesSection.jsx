@@ -4,12 +4,12 @@ const CategoriesSection = () => {
   const CATEGORIES = [
     {
       name: "Photography",
-      color: "#05563E",
-      link: "https://www.behance.net/gallery/69193679/EX-MACHINA-Photography-Art-Direction",
+      color: "#822e81",
+      link: "http://link-www.behance.net/dunsinbankole",
     },
     {
       name: "Blog & Features",
-      color: "#153465",
+      color: "#aa6373",
       link: [
         {
           text: "Medium",
@@ -18,7 +18,7 @@ const CategoriesSection = () => {
         { text: "The Native Mag", href: "https://thenativemag.com/nigerian-album-arts-past-present/" },
       ],
     },
-    { name: "Playlists", color: "#590C65", link: "https://streamlink.to/dunsinplaylists" },
+    { name: "Playlists", color: "#392061", link: "https://streamlink.to/dunsinplaylists" },
   ];
 
   const isString = (item) => typeof item === "string";

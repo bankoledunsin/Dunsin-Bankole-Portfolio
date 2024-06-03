@@ -15,10 +15,10 @@ const AppFooter = () => {
           href={social.link}
           target="_blank"
           rel="noreferrer"
-          className="border border-black rounded-xl md:rounded-2xl py-2 px-4 md:p-4 text-xl md:text-4xl flex items-center gap-2 md:gap-6 cursor-pointer"
+          className="border border-black hover:border-accent hover:text-accent rounded-xl md:rounded-2xl py-2 px-4 md:p-4 text-xl md:text-4xl flex items-center gap-2 md:gap-6 cursor-pointer"
         >
           {social.name}
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-6 md:h-10 md:w-10">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-6 w-6 md:h-10 md:w-10 fill-current">
             <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
           </svg>
         </a>

@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="overflow-x-hidden text-white overflow-y-hidden">
         <div className="animate-marquee whitespace-nowrap">
           <h2
-            className="text-9xl md:text-[200px] font-black text-black leading-[0.9]"
+            className="text-9xl md:text-[200px] font-black text-raisan-black leading-[0.9]"
             style={{ textShadow: "0 0 3px white" }}
           >
             DUNSIN BANKOLE &nbsp; DUNSIN BANKOLE
@@ -18,14 +18,15 @@ const HeroSection = () => {
         </div>
         <div className="animate-marquee whitespace-nowrap">
           <h2
-            className="text-9xl md:text-[200px] font-black text-black leading-[0.9]"
+            className="text-9xl md:text-[200px] font-black text-raisan-black leading-[0.9]"
             style={{ textShadow: "0 0 3px white" }}
           >
             DUNSIN BANKOLE &nbsp; DUNSIN BANKOLE
           </h2>
         </div>
 
-        <img src="/dunsin.png" className="md:h-full w-4/5 md:w-auto absolute bottom-0" />
+        {/* <img src="/dunsin.png" className="md:h-full w-4/5 md:w-auto absolute bottom-0" /> */}
+        <img src="/dunsin-2.png" className="md:h-full w-4/5 md:w-auto absolute bottom-0 right-0" />
       </div>
     </section>
   );

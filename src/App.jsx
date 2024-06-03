@@ -5,7 +5,6 @@ import CategoriesSection from "./components/CategoriesSection";
 import HeroSection from "./components/HeroSection";
 import HireMeSection from "./components/HireMeSection";
 import ProjectsSection from "./components/ProjectsSection";
-import TestimonialsSection from "./components/TestimonialsSection";
 
 function App() {
   return (
@@ -15,7 +14,6 @@ function App() {
       <AboutSection />
       <ProjectsSection />
       <HireMeSection />
-      <TestimonialsSection />
       <CategoriesSection />
       <AppFooter />
     </>
