@@ -3,6 +3,11 @@ import Marquee from "./Marquee";
 const ProjectsSection = () => {
   const PROJECTS = [
     {
+      name: "ShutterGirl",
+      link: "https://bookshuttergirl.com/",
+      img: "",
+    },
+    {
       name: "Punterclash",
       link: "https://dunsinbankole.notion.site/Punterclash-Product-Design-Visual-Design-Marketing-64ae3e7834d7409a9e56160f9d17be95?pvs=74",
       img: "",
