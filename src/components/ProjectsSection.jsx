@@ -12,11 +12,11 @@ const ProjectsSection = () => {
       link: "https://dunsinbankole.notion.site/Punterclash-Product-Design-Visual-Design-Marketing-64ae3e7834d7409a9e56160f9d17be95?pvs=74",
       img: "",
     },
-    {
-      name: "Maibola",
-      link: "https://www.notion.so/dunsinbankole/Maibola-App-Product-Design-071fc0171bed40ef823102ebf70ce537?pvs=4",
-      img: "",
-    },
+    // {
+    //   name: "Maibola",
+    //   link: "https://www.notion.so/dunsinbankole/Maibola-App-Product-Design-071fc0171bed40ef823102ebf70ce537?pvs=4",
+    //   img: "",
+    // },
     {
       name: "Wetalksound",
       link: "http://wetalksound.co/",
@@ -39,13 +39,22 @@ const ProjectsSection = () => {
     },
   ];
 
-  const TOOLS = ["Figma", "Webflow", "After Effects", "Adobe Photoshop", "Adobe Illustrator"];
+  const TOOLS = [
+    "Figma",
+    "Webflow",
+    "After Effects",
+    "Adobe Photoshop",
+    "Adobe Illustrator",
+  ];
   const INDUSTRIES = ["Fintech", "Crypto", "Fitness", "Saas", "Logistics"];
   const FIELDS = ["UI Design", "UX Research", "Branding", "Art Direction"];
 
   return (
     <section id="projects" className="py-10">
-      <Marquee text="PROJECTS" textClassName="mx-8 text-4xl md:text-6xl font-black text-raisan-black" />
+      <Marquee
+        text="PROJECTS"
+        textClassName="mx-8 text-4xl md:text-6xl font-black text-raisan-black"
+      />
 
       <div className="border-b-2 border-black mt-5 mb-2" />
       <div className="flex justify-end">
