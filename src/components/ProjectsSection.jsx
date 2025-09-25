@@ -45,11 +45,11 @@ const ProjectsSection = () => {
       <div>
         {PROJECTS.map((project, idx) =>
           project.spacer ? (
-            <div key={idx} className="pt-10 flex gap-4 flex-wrap px-8 md:px-24">
+            <div key={idx} className="pt-10 flex gap-3 flex-wrap px-8 md:px-24">
               {project.tags.map((tag, tagIdx) => (
                 <span
                   key={tagIdx}
-                  className={`border py-2 px-4 rounded-xl text-sm md:text-base uppercase ${PROJECT_TAG_COLORS[tag]}`}
+                  className={`border py-2 px-4 rounded-xl text-xs md:text-sm font-semibold uppercase ${PROJECT_TAG_COLORS[tag]}`}
                 >
                   {tag}
                 </span>
