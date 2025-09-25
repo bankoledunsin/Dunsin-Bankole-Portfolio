@@ -1,12 +1,12 @@
 export const PROJECTS = [
   {
-    name: "ShutterGirl",
-    link: "https://bookshuttergirl.com/",
+    name: "SpeakGlobal",
+    link: "https://speakglobal.ai/",
     img: "",
   },
   {
-    name: "SpeakGlobal",
-    link: "https://speakglobal.ai/",
+    name: "ShutterGirl",
+    link: "https://bookshuttergirl.com/",
     img: "",
   },
   {
@@ -25,11 +25,6 @@ export const PROJECTS = [
     img: "",
   },
   {
-    name: "Punterclash",
-    link: "https://dunsinbankole.notion.site/Punterclash-Product-Design-Visual-Design-Marketing-64ae3e7834d7409a9e56160f9d17be95?pvs=74",
-    img: "",
-  },
-  {
     name: "Wetalksound",
     link: "http://wetalksound.co/",
     img: "",
@@ -42,11 +37,6 @@ export const PROJECTS = [
   {
     name: "Kapsule",
     link: "https://www.figma.com/proto/uMeACAGmMWZ6PF3FluIPff/Kapsule?page-id=3%3A15&type=design&node-id=3-16&viewport=-2969%2C473%2C0.57&t=FF2MnGHSgPsSTQWn-1&scaling=scale-down&starting-point-node-id=3%3A16&mode=design",
-    img: "",
-  },
-  {
-    name: "Carte Cloud",
-    link: "https://www.figma.com/proto/x7NjvXMRxWIipDqidjRrMA/carte-cloud-app?page-id=0%3A1&node-id=35-281&viewport=565%2C415%2C0.28&t=xHaXehANTqjsVrDB-1&scaling=scale-down&starting-point-node-id=1%3A2",
     img: "",
   },
   { spacer: true },
