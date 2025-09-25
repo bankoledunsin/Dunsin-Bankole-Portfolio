@@ -1,0 +1,104 @@
+export const PROJECTS = [
+  {
+    name: "ShutterGirl",
+    link: "https://bookshuttergirl.com/",
+    img: "",
+  },
+  {
+    name: "SpeakGlobal",
+    link: "https://speakglobal.ai/",
+    img: "",
+  },
+  {
+    name: "Igitree Project",
+    link: "https://www.figma.com/proto/PunBWt6evpG8TjmqEuyUQQ/igitree-v2?node-id=107-28&t=WmVuS9tZR1eg2uWk-1",
+    img: "",
+  },
+  {
+    name: "Viebeg Impact Dashboard",
+    link: "https://www.figma.com/design/6pc5Wp7PymDpzstUMf9pMK/Viebeg?node-id=25-431&t=xkHlvUmmeMzEpK9c-1",
+    img: "",
+  },
+  {
+    name: "Rwandan Biomedical Centre RBC",
+    link: "https://www.figma.com/proto/ydglrpmTFLCNgiReXHBiAH/Medical-Data-Visualization-Platform-v2?node-id=0-1&t=XbLFhbIpocf29g89-",
+    img: "",
+  },
+  {
+    name: "Punterclash",
+    link: "https://dunsinbankole.notion.site/Punterclash-Product-Design-Visual-Design-Marketing-64ae3e7834d7409a9e56160f9d17be95?pvs=74",
+    img: "",
+  },
+  {
+    name: "Wetalksound",
+    link: "http://wetalksound.co/",
+    img: "",
+  },
+  {
+    name: "Afro Garage",
+    link: "https://www.theafrogarage.com/",
+    img: "",
+  },
+  {
+    name: "Kapsule",
+    link: "https://www.figma.com/proto/uMeACAGmMWZ6PF3FluIPff/Kapsule?page-id=3%3A15&type=design&node-id=3-16&viewport=-2969%2C473%2C0.57&t=FF2MnGHSgPsSTQWn-1&scaling=scale-down&starting-point-node-id=3%3A16&mode=design",
+    img: "",
+  },
+  {
+    name: "Carte Cloud",
+    link: "https://www.figma.com/proto/x7NjvXMRxWIipDqidjRrMA/carte-cloud-app?page-id=0%3A1&node-id=35-281&viewport=565%2C415%2C0.28&t=xHaXehANTqjsVrDB-1&scaling=scale-down&starting-point-node-id=1%3A2",
+    img: "",
+  },
+  { spacer: true },
+  {
+    name: "Apple Music x WeTalkSound Playlist Program",
+    link: "https://www.linkedin.com/posts/dunsinbankole_wetalksound-applemusic-africatotheworld-activity-7366137771368894465-XV-I?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAB77qDwByYf3IFpW-B-zNi1pXtptJJ3FUsI",
+    img: "",
+  },
+  {
+    name: "EMPIRE - Warehouse Event",
+    link: "https://www.instagram.com/reel/C0o1zGxs92R/?igsh=MW1seGFmaDQwZjhseQ==",
+    img: "",
+  },
+  {
+    name: "Turntable Charts - Magazine Designs",
+    link: "https://www.behance.net/gallery/153317231/Turntable-Magazine-Vol-2-Lojay-LV-ATTN",
+    img: "",
+  },
+  {
+    name: "Sounds Of Nollywood Documentary",
+    link: "https://youtube.com/playlist?list=PLyNINYXS4WwIWigOEjj02jKsCEg75iY4o&si=3_badL-Mg4dlkGy2",
+    img: "",
+  },
+  {
+    name: "Reminisce - ATSG",
+    link: "https://www.behance.net/gallery/183489903/ATSG-Vol1-Reminisce-(Art-Direction)",
+    img: "",
+  },
+  { spacer: true },
+  {
+    name: "Pyisuncare",
+    link: "https://pyisuncare.com/",
+    img: "",
+  },
+  {
+    name: "Dolly Real Estate",
+    link: "https://www.behance.net/gallery/108004479/Dolly-Real-Estate-Logo-Brand-Identity-Design",
+    img: "",
+  },
+  {
+    name: "Inawo",
+    link: "",
+    img: "",
+  },
+  {
+    name: "Purse Money",
+    link: "",
+    img: "",
+  },
+  {
+    name: "Trybes",
+    link: "",
+    img: "",
+  },
+];

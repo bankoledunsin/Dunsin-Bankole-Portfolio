@@ -14,7 +14,9 @@ const HeroSection = () => {
           </h2>
         </div>
         <div className="animate-marquee-reverse whitespace-nowrap">
-          <h2 className="text-9xl md:text-[200px] font-black leading-[0.8]">DUNSIN BANKOLE &nbsp; DUNSIN BANKOLE</h2>
+          <h2 className="text-9xl md:text-[200px] font-black leading-[0.8]">
+            DUNSIN BANKOLE &nbsp; DUNSIN BANKOLE
+          </h2>
         </div>
         <div className="animate-marquee whitespace-nowrap">
           <h2
@@ -26,7 +28,15 @@ const HeroSection = () => {
         </div>
 
         {/* <img src="/dunsin.png" className="md:h-full w-4/5 md:w-auto absolute bottom-0" /> */}
-        <img src="/dunsin-2.png" className="md:h-full w-4/5 md:w-auto absolute bottom-0 right-0" />
+        {/* <img
+          src="/dunsin-2.png"
+          className="md:h-full w-4/5 md:w-auto absolute bottom-0 right-0"
+        /> */}
+
+        <img
+          src="/db.jpeg"
+          className="h-full w-full md:w-auto absolute bottom-0 right-0"
+        />
       </div>
     </section>
   );

@@ -1,44 +1,7 @@
+import { PROJECTS } from "../constants/projects";
 import Marquee from "./Marquee";
 
 const ProjectsSection = () => {
-  const PROJECTS = [
-    {
-      name: "ShutterGirl",
-      link: "https://bookshuttergirl.com/",
-      img: "",
-    },
-    {
-      name: "Punterclash",
-      link: "https://dunsinbankole.notion.site/Punterclash-Product-Design-Visual-Design-Marketing-64ae3e7834d7409a9e56160f9d17be95?pvs=74",
-      img: "",
-    },
-    // {
-    //   name: "Maibola",
-    //   link: "https://www.notion.so/dunsinbankole/Maibola-App-Product-Design-071fc0171bed40ef823102ebf70ce537?pvs=4",
-    //   img: "",
-    // },
-    {
-      name: "Wetalksound",
-      link: "http://wetalksound.co/",
-      img: "",
-    },
-    {
-      name: "Afro Garage",
-      link: "https://www.theafrogarage.com/",
-      img: "",
-    },
-    {
-      name: "Kapsule",
-      link: "https://www.figma.com/proto/uMeACAGmMWZ6PF3FluIPff/Kapsule?page-id=3%3A15&type=design&node-id=3-16&viewport=-2969%2C473%2C0.57&t=FF2MnGHSgPsSTQWn-1&scaling=scale-down&starting-point-node-id=3%3A16&mode=design",
-      img: "",
-    },
-    {
-      name: "Carte Cloud",
-      link: "https://www.figma.com/proto/x7NjvXMRxWIipDqidjRrMA/carte-cloud-app?page-id=0%3A1&node-id=35-281&viewport=565%2C415%2C0.28&t=xHaXehANTqjsVrDB-1&scaling=scale-down&starting-point-node-id=1%3A2",
-      img: "",
-    },
-  ];
-
   const TOOLS = [
     "Figma",
     "Webflow",
@@ -80,24 +43,28 @@ const ProjectsSection = () => {
         </div>
       </div>
       <div>
-        {PROJECTS.map((project, idx) => (
-          <a
-            key={project.name}
-            className={`w-full border-bottom group border-b border-black px-8 md:px-24 py-6 flex items-center justify-between gap-8 hover:text-accent text-xl md:text-3xl font-light cursor-pointer transition-all ease-in-out duration-300 tooltip-${idx}`}
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {project.name}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              className="h-6 w-6 md:h-10 md:w-10 flex-shrink-0 group-hover:fill-accent transition-all ease-in-out duration-300"
+        {PROJECTS.map((project, idx) =>
+          project.spacer ? (
+            <div key={idx} className="h-16 md:h-24" />
+          ) : (
+            <a
+              key={project.name}
+              className={`w-full border-bottom group border-b border-black px-8 md:px-24 py-6 flex items-center justify-between gap-8 hover:text-accent text-xl md:text-3xl font-light cursor-pointer transition-all ease-in-out duration-300 tooltip-${idx}`}
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
             >
-              <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
-            </svg>
-          </a>
-        ))}
+              {project.name}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="h-6 w-6 md:h-10 md:w-10 flex-shrink-0 group-hover:fill-accent transition-all ease-in-out duration-300"
+              >
+                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z" />
+              </svg>
+            </a>
+          )
+        )}
       </div>
     </section>
   );
