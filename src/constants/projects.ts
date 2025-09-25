@@ -1,4 +1,5 @@
 export const PROJECTS = [
+  { spacer: true, tags: ["Product Design", "Motion Design", "Branding"] },
   {
     name: "SpeakGlobal",
     link: "https://speakglobal.ai/",
@@ -39,7 +40,7 @@ export const PROJECTS = [
     link: "https://www.figma.com/proto/uMeACAGmMWZ6PF3FluIPff/Kapsule?page-id=3%3A15&type=design&node-id=3-16&viewport=-2969%2C473%2C0.57&t=FF2MnGHSgPsSTQWn-1&scaling=scale-down&starting-point-node-id=3%3A16&mode=design",
     img: "",
   },
-  { spacer: true },
+  { spacer: true, tags: ["Visual Design", "Creative Direction", "Branding"] },
   {
     name: "Apple Music x WeTalkSound Playlist Program",
     link: "https://www.linkedin.com/posts/dunsinbankole_wetalksound-applemusic-africatotheworld-activity-7366137771368894465-XV-I?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAB77qDwByYf3IFpW-B-zNi1pXtptJJ3FUsI",
@@ -65,7 +66,10 @@ export const PROJECTS = [
     link: "https://www.behance.net/gallery/183489903/ATSG-Vol1-Reminisce-(Art-Direction)",
     img: "",
   },
-  { spacer: true },
+  {
+    spacer: true,
+    tags: ["Motion", "Brand Identity Design", "Creative Direction"],
+  },
   {
     name: "Pyisuncare",
     link: "https://pyisuncare.com/",
@@ -92,3 +96,13 @@ export const PROJECTS = [
     img: "",
   },
 ];
+
+export const PROJECT_TAG_COLORS = {
+  "Product Design": "bg-blue-100 text-blue-800 border-blue-800",
+  "Motion Design": "bg-purple-100 text-purple-800 border-purple-800",
+  Branding: "bg-green-100 text-green-800 border-green-800",
+  "Visual Design": "bg-yellow-100 text-yellow-800 border-yellow-800",
+  "Creative Direction": "bg-red-100 text-red-800 border-red-800",
+  "Brand Identity Design": "bg-green-100 text-green-800 border-green-800",
+  Motion: "bg-purple-100 text-purple-800",
+};

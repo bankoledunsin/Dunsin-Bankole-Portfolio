@@ -27,15 +27,9 @@ const HeroSection = () => {
           </h2>
         </div>
 
-        {/* <img src="/dunsin.png" className="md:h-full w-4/5 md:w-auto absolute bottom-0" /> */}
-        {/* <img
-          src="/dunsin-2.png"
-          className="md:h-full w-4/5 md:w-auto absolute bottom-0 right-0"
-        /> */}
-
         <img
-          src="/db.jpeg"
-          className="h-full w-full md:w-auto absolute bottom-0 right-0"
+          src="/db.png"
+          className="md:h-full w-4/5 md:w-auto absolute bottom-0 right-0"
         />
       </div>
     </section>
