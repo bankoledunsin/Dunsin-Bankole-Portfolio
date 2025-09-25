@@ -49,7 +49,7 @@ const ProjectsSection = () => {
               {project.tags.map((tag, tagIdx) => (
                 <span
                   key={tagIdx}
-                  className={`border py-2 px-4 rounded-xl text-sm md:text-base font-light ${PROJECT_TAG_COLORS[tag]}`}
+                  className={`border py-2 px-4 rounded-xl text-sm md:text-base uppercase ${PROJECT_TAG_COLORS[tag]}`}
                 >
                   {tag}
                 </span>
