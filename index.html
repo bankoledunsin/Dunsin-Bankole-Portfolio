@@ -1,55 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DUNSIN BANKOLE - Product Designer Creating Experiences That Actually Work</title>
-    <meta
-      name="description"
-      content="Dunsin Bankole is a product designer who loves both art and technology. He is obsessed with creating delightful experiences using Figma and Webflow."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dunsin Bankole — Product Designer</title>
+  <meta name="description" content="Dunsin Bankole is a product designer creating delightful user experiences across fintech, blockchain, entertainment and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="DUNSIN BANKOLE - Product Designer Creating Experiences That Actually Work" />
-    <meta
-      property="og:description"
-      content="Dunsin Bankole is a product designer who loves both art and technology. He is obsessed with creating delightful experiences using Figma and Webflow."
-    />
-    <meta property="og:image" content="https://i.ibb.co/G3pHs8Z/apple-touch-icon.png" />
-    <meta property="og:url" content="https://dunsinbankole.com" />
-    <meta property="og:type" content="website" />
+  <!-- ========== LOADER ========== -->
+  <div id="loader">
+    <div class="loader-pitch">
+      <div class="loader-circle"></div>
+      <div class="loader-ball">⚽</div>
+    </div>
+    <div class="loader-text">LOADING</div>
+  </div>
 
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="DUNSIN BANKOLE - Product Designer Creating Experiences That Actually Work" />
-    <meta
-      name="twitter:description"
-      content="Dunsin Bankole is a product designer who loves both art and technology. He is obsessed with creating delightful experiences using Figma and Webflow."
-    />
-    <meta name="twitter:image" content="https://i.ibb.co/G3pHs8Z/apple-touch-icon.png" />
+  <!-- ========== NAV ========== -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <div class="nav-badge">
+        <span class="nav-number">10</span>
+        <span class="nav-name">DB</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about" id="nav-about">About</a></li>
+        <li><a href="#experience" id="nav-experience">Career</a></li>
+        <li><a href="#projects" id="nav-projects">Projects</a></li>
+        <li><a href="#contact" id="nav-contact">Contact</a></li>
+      </ul>
+      <a href="mailto:jesudunsinbankole@gmail.com" class="nav-cta" id="nav-hire">Hire Me</a>
+    </div>
+  </nav>
 
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Dunsin Bankole",
-        "jobTitle": "Product Designer",
-        "url": "https://dunsinbankole.com",
-        "sameAs": ["https://www.linkedin.com/in/bankolejesudunsin/", "https://x.com/bvnkole"]
-      }
-    </script>
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <div class="pitch-container">
+      <!-- SVG Football Pitch -->
+      <svg id="pitch-svg" viewBox="0 0 800 550" preserveAspectRatio="xMidYMid slice">
+        <!-- Grass stripes -->
+        <defs>
+          <linearGradient id="grassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a5c2a;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#1e6b31;stop-opacity:1" />
+          </linearGradient>
+          <pattern id="grassStripe" x="0" y="0" width="60" height="550" patternUnits="userSpaceOnUse">
+            <rect width="30" height="550" fill="#1a5c2a"/>
+            <rect x="30" width="30" height="550" fill="#1e6b31"/>
+          </pattern>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+          <filter id="softglow">
+            <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
 
-    <!-- Canonical Link -->
-    <link rel="canonical" href="https://dunsinbankole.com" />
+        <!-- Grass base -->
+        <rect width="800" height="550" fill="url(#grassStripe)"/>
 
-    <!-- Favicon and Icons -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+        <!-- Pitch border -->
+        <rect x="30" y="25" width="740" height="500" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+
+        <!-- Halfway line -->
+        <line x1="400" y1="25" x2="400" y2="525" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+
+        <!-- Center circle -->
+        <circle cx="400" cy="275" r="70" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+        <circle cx="400" cy="275" r="3" fill="rgba(255,255,255,0.9)"/>
+
+        <!-- Top penalty area -->
+        <rect x="265" y="25" width="270" height="90" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+        <!-- Top goal area -->
+        <rect x="330" y="25" width="140" height="40" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+        <!-- Top goal -->
+        <rect x="355" y="10" width="90" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+        <!-- Top penalty spot -->
+        <circle cx="400" cy="88" r="3" fill="rgba(255,255,255,0.85)"/>
+        <!-- Top penalty arc -->
+        <path d="M 340 115 A 60 60 0 0 1 460 115" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+
+        <!-- Bottom penalty area -->
+        <rect x="265" y="435" width="270" height="90" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+        <!-- Bottom goal area -->
+        <rect x="330" y="485" width="140" height="40" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+        <!-- Bottom goal -->
+        <rect x="355" y="522" width="90" height="18" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+        <!-- Bottom penalty spot -->
+        <circle cx="400" cy="462" r="3" fill="rgba(255,255,255,0.85)"/>
+        <!-- Bottom penalty arc -->
+        <path d="M 340 435 A 60 60 0 0 0 460 435" fill="none" stroke="rgba(255,255,255,0.85)" stroke-width="2.5"/>
+
+        <!-- Corner arcs -->
+        <path d="M 30 35 A 14 14 0 0 1 44 25" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+        <path d="M 756 25 A 14 14 0 0 1 770 37" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+        <path d="M 30 515 A 14 14 0 0 0 44 525" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+        <path d="M 770 513 A 14 14 0 0 1 756 525" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
+
+        <!-- Animated ball -->
+        <circle id="football" cx="400" cy="275" r="10" fill="white" filter="url(#glow)">
+          <animate attributeName="cx" values="400;380;420;400" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="275;260;290;275" dur="4s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Ball pattern -->
+        <circle id="football-inner" cx="400" cy="275" r="10" fill="none" stroke="#333" stroke-width="1" opacity="0.6">
+          <animate attributeName="cx" values="400;380;420;400" dur="4s" repeatCount="indefinite"/>
+          <animate attributeName="cy" values="275;260;290;275" dur="4s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+
+      <!-- Hero text overlay -->
+      <div class="hero-content">
+        <div class="hero-top-bar">
+          <span class="matchday-label">MATCHDAY • PORTFOLIO 2026</span>
+          <span class="live-badge">● LIVE</span>
+        </div>
+
+        <div class="scoreboard">
+          <div class="club-side">
+            <div class="club-crest">🎨</div>
+            <span class="club-name">DUNSIN</span>
+          </div>
+          <div class="score-box">
+            <span class="score">10</span>
+            <span class="score-label">YEARS<br/>ACTIVE</span>
+          </div>
+          <div class="club-side right">
+            <div class="club-crest">⚡</div>
+            <span class="club-name">BANKOLE</span>
+          </div>
+        </div>
+
+        <div class="hero-tagline-wrap">
+          <p class="hero-tagline">Product Designer · Visual Thinker · Creative Executor</p>
+        </div>
+
+        <div class="hero-pill-row">
+          <span class="pill">UX/UI</span>
+          <span class="pill">Fintech</span>
+          <span class="pill">Blockchain</span>
+          <span class="pill">Entertainment</span>
+          <span class="pill">Branding</span>
+        </div>
+
+        <div class="hero-scroll-cue" id="hero-scroll-cue">
+          <span>Kick Off</span>
+          <div class="scroll-ball">⚽</div>
+        </div>
+      </div>
+
+      <!-- Crowd noise atmosphere -->
+      <div class="stadium-overlay"></div>
+    </div>
+  </section>
+
+  <!-- ========== FORMATION TICKER ========== -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>PRODUCT DESIGN</span><span class="sep">⚽</span>
+      <span>USER EXPERIENCE</span><span class="sep">⚽</span>
+      <span>VISUAL DESIGN</span><span class="sep">⚽</span>
+      <span>BRAND IDENTITY</span><span class="sep">⚽</span>
+      <span>MOTION DESIGN</span><span class="sep">⚽</span>
+      <span>FINTECH</span><span class="sep">⚽</span>
+      <span>BLOCKCHAIN</span><span class="sep">⚽</span>
+      <span>ENTERTAINMENT</span><span class="sep">⚽</span>
+      <span>PHOTOGRAPHY</span><span class="sep">⚽</span>
+      <span>AFROBEATS</span><span class="sep">⚽</span>
+      <!-- Duplicate for seamless loop -->
+      <span>PRODUCT DESIGN</span><span class="sep">⚽</span>
+      <span>USER EXPERIENCE</span><span class="sep">⚽</span>
+      <span>VISUAL DESIGN</span><span class="sep">⚽</span>
+      <span>BRAND IDENTITY</span><span class="sep">⚽</span>
+      <span>MOTION DESIGN</span><span class="sep">⚽</span>
+      <span>FINTECH</span><span class="sep">⚽</span>
+      <span>BLOCKCHAIN</span><span class="sep">⚽</span>
+      <span>ENTERTAINMENT</span><span class="sep">⚽</span>
+    </div>
+  </div>
+
+  <!-- ========== ABOUT — CENTER CIRCLE ========== -->
+  <section id="about">
+    <div class="section-header">
+      <div class="zone-label">CENTER CIRCLE</div>
+      <h2 class="section-title">The Playmaker</h2>
+    </div>
+
+    <div class="about-grid">
+      <!-- Player card -->
+      <div class="player-card" id="player-card">
+        <div class="card-header">
+          <div class="card-rating">94</div>
+          <div class="card-pos">DES</div>
+          <div class="card-flag">🇳🇬</div>
+        </div>
+        <div class="card-silhouette">
+          <div class="silhouette-avatar">
+            <div class="avatar-ring"></div>
+            <span class="avatar-icon">🧑‍💻</span>
+          </div>
+        </div>
+        <div class="card-name">BANKOLE</div>
+        <div class="card-stats">
+          <div class="stat"><span class="stat-val">96</span><span class="stat-key">UX</span></div>
+          <div class="stat"><span class="stat-val">93</span><span class="stat-key">UI</span></div>
+          <div class="stat"><span class="stat-val">91</span><span class="stat-key">VIS</span></div>
+          <div class="stat"><span class="stat-val">89</span><span class="stat-key">BRD</span></div>
+          <div class="stat"><span class="stat-val">88</span><span class="stat-key">MOT</span></div>
+          <div class="stat"><span class="stat-val">95</span><span class="stat-key">CRE</span></div>
+        </div>
+        <div class="card-club">DESIGN FC</div>
+      </div>
+
+      <!-- Bio text -->
+      <div class="about-text">
+        <p class="about-lead">
+          Using <strong>design thinking</strong> to create delightful user experiences and improve customer experience for businesses, personal brands, and music artistes.
+        </p>
+        <p>
+          Clean, clutter-free and effective designs — that's the philosophy. With over a decade of experience spanning <strong>fintech, blockchain, entertainment, VC, and government</strong>, every pixel has a purpose.
+        </p>
+        <p>
+          Off the pitch? You'll find me chasing light with a camera 📸, vibing to Afrobeats 🎵, or deep-diving into Blockchain tech 🔗.
+        </p>
+
+        <div class="about-tags">
+          <div class="tag-group">
+            <h4>Positions</h4>
+            <div class="tag-chips">
+              <span class="chip">Product Design</span>
+              <span class="chip">Brand Identity</span>
+              <span class="chip">Visual Design</span>
+              <span class="chip">Motion Design</span>
+              <span class="chip">UX Strategy</span>
+            </div>
+          </div>
+          <div class="tag-group">
+            <h4>Home Turf</h4>
+            <div class="tag-chips">
+              <span class="chip alt">Figma</span>
+              <span class="chip alt">Illustrator</span>
+              <span class="chip alt">Photoshop</span>
+              <span class="chip alt">After Effects</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-socials">
+          <a href="https://www.linkedin.com/in/dunsinbankole/" id="social-linkedin" target="_blank" rel="noopener" class="social-link">LinkedIn</a>
+          <a href="https://dribbble.com/dunsinbankole" id="social-dribbble" target="_blank" rel="noopener" class="social-link">Dribbble</a>
+          <a href="https://www.behance.net/dunsinbankole" id="social-behance" target="_blank" rel="noopener" class="social-link">Behance</a>
+          <a href="https://medium.com/@dunsinbankole" id="social-medium" target="_blank" rel="noopener" class="social-link">Medium</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCE — MATCH HISTORY ========== -->
+  <section id="experience">
+    <div class="pitch-bg-section">
+      <div class="pitch-lines-overlay"></div>
+      <div class="section-inner">
+        <div class="section-header light">
+          <div class="zone-label">CAREER RECORD</div>
+          <h2 class="section-title">Match History</h2>
+        </div>
+
+        <div class="career-timeline">
+
+          <!-- Current -->
+          <div class="career-block current-block">
+            <div class="career-block-label">CURRENT CLUBS</div>
+            <div class="career-cards-row">
+              <div class="career-card featured" id="career-republic">
+                <div class="career-card-top">
+                  <span class="career-year-badge">2026 – Present</span>
+                  <span class="career-badge current">Active</span>
+                </div>
+                <div class="career-role">Senior Designer</div>
+                <div class="career-dept">Print & User Interface</div>
+                <a href="https://rpublc.com/" target="_blank" rel="noopener" class="career-company">The Republic ↗</a>
+              </div>
+              <div class="career-card featured" id="career-wetalksound">
+                <div class="career-card-top">
+                  <span class="career-year-badge">2019 – Present</span>
+                  <span class="career-badge current">Active</span>
+                </div>
+                <div class="career-role">Co-Founder</div>
+                <div class="career-dept">Product & Brand</div>
+                <a href="https://www.wetalksound.co/" target="_blank" rel="noopener" class="career-company">Wetalksound ↗</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timeline items -->
+          <div class="timeline">
+            <div class="timeline-item" id="career-zella">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2022</div>
+              <div class="timeline-content">
+                <div class="timeline-role">Brand & Visual Designer</div>
+                <div class="timeline-company">Zella.Africa</div>
+                <div class="timeline-tags"><span>Branding</span><span>Visual</span></div>
+              </div>
+            </div>
+
+            <div class="timeline-item" id="career-blueprint">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2015 – 2022</div>
+              <div class="timeline-content">
+                <div class="timeline-role">Brand, Motion, Visual & Product Designer</div>
+                <a href="http://theblueprint.studio" target="_blank" rel="noopener" class="timeline-company link">The Blueprint Studio ↗</a>
+                <div class="timeline-tags"><span>Motion</span><span>Brand</span><span>Product</span><span>Visual</span></div>
+              </div>
+            </div>
+
+            <div class="timeline-item" id="career-finance">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2021 – 2022</div>
+              <div class="timeline-content">
+                <div class="timeline-role">Product Designer</div>
+                <a href="https://finance.vote/" target="_blank" rel="noopener" class="timeline-company link">finance.vote ↗</a>
+                <div class="timeline-tags"><span>Blockchain</span><span>Product</span></div>
+              </div>
+            </div>
+
+            <div class="timeline-item" id="career-punterclash">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2020 – 2021</div>
+              <div class="timeline-content">
+                <div class="timeline-role">Product Designer</div>
+                <a href="http://punterclash.com" target="_blank" rel="noopener" class="timeline-company link">Punterclash ↗</a>
+                <div class="timeline-tags"><span>Sports</span><span>Product</span><span>Marketing</span></div>
+              </div>
+            </div>
+
+            <div class="timeline-item" id="career-audiomack">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2020 – 2021</div>
+              <div class="timeline-content">
+                <div class="timeline-role">Visual & Brand Designer</div>
+                <a href="https://audiomack.com/" target="_blank" rel="noopener" class="timeline-company link">Audiomack Africa ↗</a>
+                <div class="timeline-tags"><span>Music</span><span>Brand</span><span>Visual</span></div>
+              </div>
+            </div>
+
+            <div class="timeline-item" id="career-aiesec">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">2017 – 2018</div>
+              <div class="timeline-content">
+                <div class="timeline-role">Lead Designer, Brand & CX Team</div>
+                <a href="https://aiesec.org/" target="_blank" rel="noopener" class="timeline-company link">AIESEC ↗</a>
+                <div class="timeline-tags"><span>Leadership</span><span>Brand</span><span>CX</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS — THE PITCH ========== -->
+  <section id="projects">
+    <div class="section-header">
+      <div class="zone-label">ATTACKING THIRD</div>
+      <h2 class="section-title">The Playbook</h2>
+      <p class="section-sub">Hover a project to see the play</p>
+    </div>
+
+    <!-- Filter tabs -->
+    <div class="project-filters" id="project-filters">
+      <button class="filter-btn active" data-filter="all" id="filter-all">All Plays</button>
+      <button class="filter-btn" data-filter="product" id="filter-product">Product</button>
+      <button class="filter-btn" data-filter="brand" id="filter-brand">Brand</button>
+      <button class="filter-btn" data-filter="visual" id="filter-visual">Visual</button>
+    </div>
+
+    <div class="projects-grid" id="projects-grid">
+
+      <div class="project-card" data-category="product" id="proj-punterclash">
+        <div class="proj-number">01</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Product</span><span>Visual</span><span>Marketing</span></div>
+          <h3 class="proj-title">Punterclash</h3>
+          <p class="proj-desc">Product Design, Visual Design & Marketing for a sports prediction platform with a massive user base.</p>
+          <a href="https://www.notion.so/Punterclash-Product-Design-Visual-Design-Marketing-64ae3e7834d7409a9e56160f9d17be95" target="_blank" rel="noopener" class="proj-link" id="proj-punterclash-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="product" id="proj-maibola">
+        <div class="proj-number">02</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Product</span><span>App Design</span></div>
+          <h3 class="proj-title">Maibola App</h3>
+          <p class="proj-desc">End-to-end product design for the Maibola mobile application — intuitive, clean, purposeful.</p>
+          <a href="https://www.notion.so/Maibola-App-Product-Design-071fc0171bed40ef823102ebf70ce537" target="_blank" rel="noopener" class="proj-link" id="proj-maibola-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="product" id="proj-kapsule">
+        <div class="proj-number">03</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Product</span><span>Visualisation</span></div>
+          <h3 class="proj-title">Kapsule</h3>
+          <p class="proj-desc">Product Design Visualisation — exploring the future of digital product presentation and interaction.</p>
+          <a href="https://www.notion.so/Kapsule-Product-Design-Visualisation-723815b56e184c8a8c6aedf4998694d8" target="_blank" rel="noopener" class="proj-link" id="proj-kapsule-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="product" id="proj-igitree">
+        <div class="proj-number">04</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Product</span><span>Prototype</span></div>
+          <h3 class="proj-title">iGiTree v2</h3>
+          <p class="proj-desc">Interactive Figma prototype — a modern family connection and heritage digital platform.</p>
+          <a href="https://www.figma.com/proto/PunBWt6evpG8TjmqEuyUQQ/igitree-v2?node-id=107-28&t=WmVuS9tZR1eg2uWk-1" target="_blank" rel="noopener" class="proj-link" id="proj-igitree-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="product" id="proj-viebeg">
+        <div class="proj-number">05</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Product</span><span>Figma</span></div>
+          <h3 class="proj-title">Viebeg</h3>
+          <p class="proj-desc">Comprehensive UI design system and product design for Viebeg — healthcare supply chain platform.</p>
+          <a href="https://www.figma.com/design/6pc5Wp7PymDpzstUMf9pMK/Viebeg?node-id=25-431" target="_blank" rel="noopener" class="proj-link" id="proj-viebeg-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="product" id="proj-medical">
+        <div class="proj-number">06</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Data</span><span>Healthcare</span><span>Product</span></div>
+          <h3 class="proj-title">Medical Data Viz Platform</h3>
+          <p class="proj-desc">A complex medical data visualization platform design — making health data understandable at scale.</p>
+          <a href="https://www.figma.com/proto/ydglrpmTFLCNgiReXHBiAH/Medical-Data-Visualization-Platform-v2?node-id=0-1" target="_blank" rel="noopener" class="proj-link" id="proj-medical-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="visual" id="proj-turntable">
+        <div class="proj-number">07</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Visual</span><span>Music</span><span>Editorial</span></div>
+          <h3 class="proj-title">Turntable Magazine Vol. 2</h3>
+          <p class="proj-desc">Art direction and editorial design for Turntable Magazine Vol. 2 featuring Lojay — LV ATTN.</p>
+          <a href="https://www.behance.net/gallery/153317231/Turntable-Magazine-Vol-2-Lojay-LV-ATTN" target="_blank" rel="noopener" class="proj-link" id="proj-turntable-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="visual" id="proj-atsg">
+        <div class="proj-number">08</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Visual</span><span>Art Direction</span><span>Music</span></div>
+          <h3 class="proj-title">ATSG Vol. 1 — Reminisce</h3>
+          <p class="proj-desc">Art direction for ATSG Vol. 1 — a visual exploration of Reminisce's musical identity and legacy.</p>
+          <a href="https://www.behance.net/gallery/183489903/ATSG-Vol1-Reminisce-(Art-Direction)" target="_blank" rel="noopener" class="proj-link" id="proj-atsg-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="brand" id="proj-dolly">
+        <div class="proj-number">09</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Brand</span><span>Logo</span><span>Identity</span></div>
+          <h3 class="proj-title">Dolly Real Estate</h3>
+          <p class="proj-desc">Logo & brand identity design for Dolly Real Estate — luxury meets clarity in property branding.</p>
+          <a href="https://www.behance.net/gallery/108004479/Dolly-Real-Estate-Logo-Brand-Identity-Design" target="_blank" rel="noopener" class="proj-link" id="proj-dolly-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="product" id="proj-speakglobal">
+        <div class="proj-number">10</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Product</span><span>AI</span><span>Language</span></div>
+          <h3 class="proj-title">SpeakGlobal AI</h3>
+          <p class="proj-desc">UI/UX design for an AI-powered global language learning platform — making communication borderless.</p>
+          <a href="https://speakglobal.ai/" target="_blank" rel="noopener" class="proj-link" id="proj-speakglobal-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="product" id="proj-inawo">
+        <div class="proj-number">11</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Product</span><span>Events</span><span>Web</span></div>
+          <h3 class="proj-title">Inawo</h3>
+          <p class="proj-desc">Product design for Inawo — Nigeria's premier event and celebration management platform.</p>
+          <a href="https://www.inawo.com/" target="_blank" rel="noopener" class="proj-link" id="proj-inawo-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+      <div class="project-card" data-category="product" id="proj-purse">
+        <div class="proj-number">12</div>
+        <div class="proj-content">
+          <div class="proj-tags"><span>Fintech</span><span>Product</span><span>Global</span></div>
+          <h3 class="proj-title">Purse Money</h3>
+          <p class="proj-desc">Fintech product design for Purse Money — seamless global payments with beautiful user flows.</p>
+          <a href="https://purse.money/global" target="_blank" rel="noopener" class="proj-link" id="proj-purse-link">View Play ↗</a>
+        </div>
+        <div class="proj-pattern"></div>
+      </div>
+
+    </div>
+
+    <div class="projects-cta">
+      <a href="https://www.behance.net/dunsinbankole" target="_blank" rel="noopener" class="cta-btn" id="view-more-btn">
+        <span>View Full Playbook on Behance</span>
+        <span class="cta-icon">⚽</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== STATS BAR ========== -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-num" data-target="10">0</span>
+      <span class="stat-label">Years Experience</span>
+    </div>
+    <div class="stat-divider">⚽</div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="20">0</span>
+      <span class="stat-label">Projects Delivered</span>
+    </div>
+    <div class="stat-divider">⚽</div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="8">0</span>
+      <span class="stat-label">Industries</span>
+    </div>
+    <div class="stat-divider">⚽</div>
+    <div class="stat-item">
+      <span class="stat-num" data-target="6">0</span>
+      <span class="stat-label">Companies</span>
+    </div>
+  </div>
+
+  <!-- ========== CONTACT — GOAL AREA ========== -->
+  <section id="contact">
+    <div class="goal-area-wrapper">
+      <!-- SVG goal net background -->
+      <div class="goal-net-bg"></div>
+
+      <div class="contact-inner">
+        <div class="section-header light">
+          <div class="zone-label">THE GOAL AREA</div>
+          <h2 class="section-title">Score a Goal</h2>
+          <p class="section-sub" style="color: rgba(255,255,255,0.7)">Let's create something extraordinary together</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-left">
+            <div class="contact-line">
+              <span class="contact-icon">📪</span>
+              <div>
+                <div class="contact-label">Direct Line</div>
+                <a href="mailto:jesudunsinbankole@gmail.com" id="contact-email" class="contact-value">jesudunsinbankole@gmail.com</a>
+              </div>
+            </div>
+
+            <div class="contact-cta-wrap">
+              <a href="mailto:jesudunsinbankole@gmail.com" class="shoot-btn" id="shoot-btn">
+                <span class="shoot-text">Shoot Your Shot</span>
+                <span class="shoot-ball">⚽</span>
+              </a>
+            </div>
+
+            <div class="contact-social-row">
+              <a href="https://www.linkedin.com/in/dunsinbankole/" target="_blank" rel="noopener" class="contact-social-pill" id="contact-linkedin">LinkedIn</a>
+              <a href="https://medium.com/@dunsinbankole" target="_blank" rel="noopener" class="contact-social-pill" id="contact-medium">Medium</a>
+              <a href="https://dribbble.com/dunsinbankole" target="_blank" rel="noopener" class="contact-social-pill" id="contact-dribbble">Dribbble</a>
+              <a href="https://www.behance.net/dunsinbankole" target="_blank" rel="noopener" class="contact-social-pill" id="contact-behance">Behance</a>
+            </div>
+          </div>
+
+          <div class="contact-right">
+            <div class="formation-card">
+              <div class="formation-title">STARTING FORMATION</div>
+              <div class="formation-viz">
+                <div class="form-row"><span class="form-dot gk">GK</span></div>
+                <div class="form-row">
+                  <span class="form-dot">UX</span>
+                  <span class="form-dot">UI</span>
+                  <span class="form-dot">VIS</span>
+                </div>
+                <div class="form-row">
+                  <span class="form-dot">BRD</span>
+                  <span class="form-dot">MOT</span>
+                </div>
+                <div class="form-row">
+                  <span class="form-dot striker">10</span>
+                </div>
+              </div>
+              <div class="formation-label">4-3-2-1 / Design First</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-badge">
+        <span class="footer-num">10</span>
+        <div class="footer-name-block">
+          <span class="footer-surname">BANKOLE</span>
+          <span class="footer-desc">Product Designer · Design FC · Lagos</span>
+        </div>
+      </div>
+      <div class="footer-copy">
+        © 2026 Dunsin Bankole. Built with ❤️ & good design thinking.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>

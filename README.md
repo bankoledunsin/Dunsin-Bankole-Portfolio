@@ -1,8 +1,26 @@
-# DunsinBankole
+# ⚽ Dunsin Bankole — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A football pitch–themed interactive portfolio for **Dunsin Bankole**, product designer.
 
-Currently, two official plugins are available:
+**Live:** [dunsinbankole.com](https://dunsinbankole.com) *(coming soon)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Sections
+
+- 🏟️ **Hero** — Full SVG animated football pitch with parallax
+- 🃏 **About** — FIFA-style player card with 3D tilt
+- 📋 **Career** — Match history timeline
+- 🗂️ **Projects** — Filterable project cards
+- 📊 **Stats** — Animated counters
+- 📬 **Contact** — "Shoot Your Shot" CTA
+
+## Stack
+
+Plain `HTML` · `CSS` · `JS` — zero dependencies, zero build step.
+
+## Deploy
+
+Drop the folder on [Netlify](https://netlify.com), [Vercel](https://vercel.com), or [GitHub Pages](https://pages.github.com) and it works instantly.
+
+---
+
+Designed & built with ❤️ and good design thinking.
