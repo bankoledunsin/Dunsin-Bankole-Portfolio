@@ -110,16 +110,25 @@
         <path d="M 30 515 A 14 14 0 0 0 44 525" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
         <path d="M 770 513 A 14 14 0 0 1 756 525" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="2"/>
 
-        <!-- Animated ball -->
-        <circle id="football" cx="400" cy="275" r="10" fill="white" filter="url(#glow)">
-          <animate attributeName="cx" values="400;380;420;400" dur="4s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="275;260;290;275" dur="4s" repeatCount="indefinite"/>
+        <!-- Animated ball (click for penalty!) -->
+        <circle id="football" cx="400" cy="275" r="10" fill="white" filter="url(#glow)" style="cursor:pointer">
+          <animate id="ball-idle-x" attributeName="cx" values="400;380;420;400" dur="4s" repeatCount="indefinite"/>
+          <animate id="ball-idle-y" attributeName="cy" values="275;260;290;275" dur="4s" repeatCount="indefinite"/>
         </circle>
         <!-- Ball pattern -->
-        <circle id="football-inner" cx="400" cy="275" r="10" fill="none" stroke="#333" stroke-width="1" opacity="0.6">
-          <animate attributeName="cx" values="400;380;420;400" dur="4s" repeatCount="indefinite"/>
-          <animate attributeName="cy" values="275;260;290;275" dur="4s" repeatCount="indefinite"/>
+        <circle id="football-inner" cx="400" cy="275" r="10" fill="none" stroke="#333" stroke-width="1" opacity="0.6" style="cursor:pointer">
+          <animate id="ball-inner-idle-x" attributeName="cx" values="400;380;420;400" dur="4s" repeatCount="indefinite"/>
+          <animate id="ball-inner-idle-y" attributeName="cy" values="275;260;290;275" dur="4s" repeatCount="indefinite"/>
         </circle>
+        <!-- Goal net flash -->
+        <rect id="goal-net-flash" x="355" y="10" width="90" height="18" fill="rgba(57,255,110,0)" rx="2" pointer-events="none"/>
+        <!-- Click hint -->
+        <text id="ball-hint-text" x="400" y="300" text-anchor="middle"
+          font-family="'Barlow Condensed', sans-serif" font-size="9" font-weight="600"
+          letter-spacing="2" fill="rgba(255,255,255,0.4)" pointer-events="none"
+          style="text-transform:uppercase; animation: hintTextFade 3s 2.2s ease forwards; opacity:0">
+          CLICK TO SHOOT
+        </text>
       </svg>
 
       <!-- Hero text overlay -->
@@ -164,6 +173,13 @@
 
       <!-- Crowd noise atmosphere -->
       <div class="stadium-overlay"></div>
+
+      <!-- GOAL celebration overlay -->
+      <div id="goal-overlay" aria-hidden="true">
+        <div class="goal-text">GOAL!</div>
+        <div class="goal-sub">⚽ Penalty Scored ⚽</div>
+        <div class="goal-crowd">📣 📣 📣</div>
+      </div>
     </div>
   </section>
 

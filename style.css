@@ -443,6 +443,119 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ============================================================
+   PENALTY KICK — GOAL CELEBRATION
+   ============================================================ */
+#football, #football-inner {
+  transition: r 0.2s ease;
+}
+#football:hover {
+  r: 12;
+  filter: url(#softglow);
+}
+
+#goal-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,0,0,0.55) 0%, transparent 100%);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#goal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.goal-text {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 18vw, 13rem);
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-shadow:
+    0 0 40px rgba(232,197,71,0.9),
+    0 0 80px rgba(232,197,71,0.5),
+    0 8px 30px rgba(0,0,0,0.6);
+  animation: goalPop 0.5s cubic-bezier(0.17, 0.89, 0.32, 1.4) both;
+}
+
+.goal-sub {
+  font-family: var(--font-condensed);
+  font-size: clamp(1rem, 3vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  animation: goalPop 0.5s 0.12s cubic-bezier(0.17, 0.89, 0.32, 1.4) both;
+}
+
+.goal-crowd {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  animation: goalPop 0.5s 0.22s cubic-bezier(0.17, 0.89, 0.32, 1.4) both,
+             crowdWave 0.6s 0.3s ease-in-out infinite alternate;
+}
+
+@keyframes goalPop {
+  from { opacity: 0; transform: scale(0.3) translateY(30px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes crowdWave {
+  from { transform: scale(1) rotate(-5deg); }
+  to   { transform: scale(1.15) rotate(5deg); }
+}
+
+/* Net flash */
+#goal-net-flash.flashing {
+  animation: netFlash 0.12s ease-in-out 4 alternate;
+}
+
+@keyframes netFlash {
+  from { fill: rgba(57,255,110,0); }
+  to   { fill: rgba(57,255,110,0.7); }
+}
+
+/* Penalty hint tooltip */
+#football-hint {
+  position: absolute;
+  top: calc(50% + 20px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-condensed);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  pointer-events: none;
+  white-space: nowrap;
+  animation: hintFade 3s 2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes hintFade {
+  0%   { opacity: 0; transform: translateX(-50%) translateY(0); }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+}
+
+@keyframes hintTextFade {
+  0%   { opacity: 0; }
+  20%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ============================================================
    TICKER
    ============================================================ */
 .ticker-wrap {

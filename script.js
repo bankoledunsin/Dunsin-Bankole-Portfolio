@@ -333,7 +333,200 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  console.log('%c⚽ DESIGN FC — Dunsin Bankole Portfolio', 
+  // ----------------------------------------------------------------
+  // 16. PENALTY KICK — SVG Ball Interaction
+  // ----------------------------------------------------------------
+  const svgBall      = document.getElementById('football');
+  const svgBallInner = document.getElementById('football-inner');
+  const netFlash     = document.getElementById('goal-net-flash');
+  const goalOverlay  = document.getElementById('goal-overlay');
+  const hintText     = document.getElementById('ball-hint-text');
+  const pitchSVG     = document.getElementById('pitch-svg');
+
+  // Goal target positions (top goal: x 355–445, y ~19)
+  const goalTargets = [
+    { x: 375, y: 14 },  // bottom-left of goal
+    { x: 400, y: 12 },  // centre
+    { x: 425, y: 14 },  // bottom-right of goal
+  ];
+
+  let penaltyInProgress = false;
+
+  function shootPenalty() {
+    if (penaltyInProgress) return;
+    penaltyInProgress = true;
+
+    // Hide the hint
+    if (hintText) hintText.style.opacity = '0';
+
+    // Pause idle SMIL animations by freezing their values
+    const idleAnims = ['ball-idle-x', 'ball-idle-y', 'ball-inner-idle-x', 'ball-inner-idle-y'];
+    idleAnims.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.setAttribute('repeatCount', '0');
+    });
+
+    // Snap ball to centre
+    const startX = 400, startY = 275;
+    svgBall.setAttribute('cx', startX);
+    svgBall.setAttribute('cy', startY);
+    svgBallInner.setAttribute('cx', startX);
+    svgBallInner.setAttribute('cy', startY);
+
+    // Pick a random corner
+    const target = goalTargets[Math.floor(Math.random() * goalTargets.length)];
+
+    // Control point for the quadratic curve (ball curves up and over)
+    const cpX = startX + (Math.random() * 80 - 40);
+    const cpY = 120;  // arcs through the midfield
+
+    const duration = 600; // ms
+    const startTime = performance.now();
+
+    function easeInQuad(t) { return t * t; }
+    function easeOutQuad(t) { return t * (2 - t); }
+
+    function animateBall(now) {
+      const elapsed = now - startTime;
+      const rawT = Math.min(elapsed / duration, 1);
+      // ease-in for acceleration feel
+      const t = rawT < 0.5 ? easeInQuad(rawT * 2) / 2 : 0.5 + easeOutQuad((rawT - 0.5) * 2) / 2;
+
+      // Quadratic Bezier
+      const x = (1 - t) * (1 - t) * startX + 2 * (1 - t) * t * cpX + t * t * target.x;
+      const y = (1 - t) * (1 - t) * startY + 2 * (1 - t) * t * cpY + t * t * target.y;
+
+      // Scale: grow to 14 at midpoint, shrink to 5 as it enters goal
+      const r = rawT < 0.5
+        ? 10 + rawT * 2 * 4          // 10 → 14
+        : 14 - (rawT - 0.5) * 2 * 9; // 14 → 5
+
+      svgBall.setAttribute('cx', x);
+      svgBall.setAttribute('cy', y);
+      svgBall.setAttribute('r', Math.max(r, 3));
+      svgBallInner.setAttribute('cx', x);
+      svgBallInner.setAttribute('cy', y);
+      svgBallInner.setAttribute('r', Math.max(r, 3));
+
+      // Spin effect via transform (rotate around ball centre)
+      const spin = rawT * 720;
+      const spinTransform = `rotate(${spin}, ${x}, ${y})`;
+      svgBallInner.setAttribute('transform', spinTransform);
+
+      if (rawT < 1) {
+        requestAnimationFrame(animateBall);
+      } else {
+        onBallInGoal();
+      }
+    }
+
+    requestAnimationFrame(animateBall);
+  }
+
+  function onBallInGoal() {
+    // Flash the net
+    if (netFlash) {
+      netFlash.classList.add('flashing');
+      setTimeout(() => netFlash.classList.remove('flashing'), 600);
+    }
+
+    // Shake the pitch SVG
+    if (pitchSVG) {
+      pitchSVG.style.transition = 'none';
+      let shakeCount = 0;
+      const shakeInterval = setInterval(() => {
+        const dx = (Math.random() - 0.5) * 8;
+        const dy = (Math.random() - 0.5) * 4;
+        pitchSVG.style.transform = `translate(${dx}px, ${dy}px)`;
+        if (++shakeCount > 8) {
+          clearInterval(shakeInterval);
+          pitchSVG.style.transform = '';
+          pitchSVG.style.transition = '';
+        }
+      }, 50);
+    }
+
+    // Confetti burst
+    spawnConfetti();
+
+    // Show GOAL overlay
+    if (goalOverlay) {
+      goalOverlay.classList.add('active');
+    }
+
+    // Reset after 3s
+    setTimeout(resetPenalty, 3000);
+  }
+
+  function resetPenalty() {
+    // Hide overlay
+    if (goalOverlay) goalOverlay.classList.remove('active');
+
+    // Restore idle animations
+    const idleAnims = ['ball-idle-x', 'ball-idle-y', 'ball-inner-idle-x', 'ball-inner-idle-y'];
+    idleAnims.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.setAttribute('repeatCount', 'indefinite');
+    });
+
+    // Reset ball size and position
+    svgBall.setAttribute('r', '10');
+    svgBallInner.setAttribute('r', '10');
+    svgBall.setAttribute('cx', 400);
+    svgBall.setAttribute('cy', 275);
+    svgBallInner.setAttribute('cx', 400);
+    svgBallInner.setAttribute('cy', 275);
+    svgBallInner.removeAttribute('transform');
+
+    penaltyInProgress = false;
+  }
+
+  function spawnConfetti() {
+    const colors = ['#e8c547', '#39ff6e', '#ffffff', '#ff4444', '#4488ff'];
+    const hero = document.getElementById('hero');
+    for (let i = 0; i < 30; i++) {
+      const c = document.createElement('div');
+      const size = Math.random() * 10 + 5;
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const startX = 30 + Math.random() * 40; // % from left, roughly goal area
+      const angle = -60 + Math.random() * 120;
+      const dist = 80 + Math.random() * 140;
+      const delay = Math.random() * 300;
+      c.style.cssText = `
+        position: absolute;
+        left: ${startX}%;
+        top: 5%;
+        width: ${size}px;
+        height: ${size}px;
+        background: ${color};
+        border-radius: ${Math.random() > 0.5 ? '50%' : '2px'};
+        pointer-events: none;
+        z-index: 25;
+        opacity: 1;
+        animation: confettiFall 1.2s ${delay}ms ease-out forwards;
+        --angle: ${angle}deg;
+        --dist: ${dist}px;
+      `;
+      hero.appendChild(c);
+      setTimeout(() => c.remove(), 1600 + delay);
+    }
+  }
+
+  // Inject confetti keyframe once
+  const confettiStyle = document.createElement('style');
+  confettiStyle.textContent = `
+    @keyframes confettiFall {
+      0%   { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+      100% { transform: translate(calc(sin(var(--angle)) * var(--dist)), calc(cos(var(--angle)) * var(--dist))) rotate(${Math.random() * 720}deg); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(confettiStyle);
+
+  // Bind clicks to both ball circles
+  if (svgBall)      svgBall.addEventListener('click', shootPenalty);
+  if (svgBallInner) svgBallInner.addEventListener('click', shootPenalty);
+
+  console.log('%c⚽ DESIGN FC — Dunsin Bankole Portfolio',
     'color: #39ff6e; font-size: 16px; font-weight: bold; background: #0a1a10; padding: 8px 16px; border-radius: 4px;');
 
 });
